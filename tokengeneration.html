@@ -17,7 +17,7 @@
   <script>
     async function gen() {
       const key = document.getElementById('key').value;
-      const res = await fetch('/.netlify/functions/create-token', {
+      const res = await fetch('/api/create-token', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ adminKey: key })

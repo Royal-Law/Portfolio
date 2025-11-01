@@ -46,13 +46,7 @@
                 <div id="content" style="margin-left: 10%;"></div>
                 <div id="info-section"></div>
 
-                <script>
-                fetch('card.html')
-                    .then(response => response.text())
-                    .then(data => {
-                    document.getElementById('content').innerHTML = data;
-                    });
-                </script>
+                
 
             
                 <br>
@@ -74,7 +68,52 @@
             </button>
         </div>
         <script src="Script.js"></script>
-        </body>            
+         <script>
+  // === TOKEN GATE FOR card.html ===
+  const tokenFormHTML = `
+    <div style="text-align:center; margin:2rem 0; font-family:system-ui;">
+      <input type="text" id="tokenInput" placeholder="Enter token" style="padding:0.6rem; width:220px; font-size:1rem;">
+      <button id="tokenSubmit" style="padding:0.6rem 1rem; background:#00fdd3; border:none; color:black; font-weight:bold; cursor:pointer; margin-left:0.5rem;">
+        View Hidden Content
+      </button>
+      <p id="tokenMsg" style="color:#ff0; margin-top:0.8rem; font-weight:bold;"></p>
+    </div>
+  `;
+
+  // Replace the #content area with token form initially
+  const contentDiv = document.getElementById('content');
+  contentDiv.style.marginLeft = '10%';
+  contentDiv.innerHTML = tokenFormHTML;
+
+  document.getElementById('tokenSubmit').onclick = async () => {
+    const token = document.getElementById('tokenInput').value.trim();
+    const msg = document.getElementById('tokenMsg');
+    if (!token) return msg.textContent = 'Enter a token';
+
+    msg.textContent = 'Verifying...';
+
+    try {
+      const res = await fetch('/api/verify-token', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token })
+      });
+      const data = await res.json();
+
+      if (data.valid) {
+        // Load FULL card.html
+        const cardRes = await fetch('card.html');
+        const cardHTML = await cardRes.text();
+        contentDiv.innerHTML = cardHTML;
+        msg.textContent = '';
+      } else {
+        msg.textContent = data.message || 'Invalid token';
+      }
+    } catch (err) {
+      msg.textContent = 'Error. Try again.';
+    }
+  };
+</script>      
     </body>
 
 </html>
