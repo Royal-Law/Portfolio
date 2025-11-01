@@ -1,0 +1,8 @@
+{
+  "name": "about-token-gate",
+  "private": true,
+  "dependencies": {
+    "pg": "^8.12.0",
+    "crypto": "^1.0.1"
+  }
+}
