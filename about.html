@@ -44,54 +44,49 @@
                 </div>
                 <br><br><br>
                 <div id="content" style="margin-left: 10%;"></div>
-                <div id="info-section"></div>
+<div id="info-section"></div>
 
-                
+<!-- INFO BANNER (shown to everyone) -->
+<div style="text-align:center; margin:2rem 0; padding:1.5rem; background:#111; border:2px solid #00fdd3; border-radius:10px; color:#fff;">
+  <p><strong>Some information is hidden.</strong><br>
+     To view the full profile, you need a token. Click the button below to enter it.</p>
+  <button id="openTokenModal" style="margin-top:1rem; padding:0.8rem 1.8rem; background:#00fdd3; color:#000; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">
+    View Hidden Content
+  </button>
+</div>
 
-            
-                <br>
-                <br><br>
-                <a href="Contact.html" class="link">Request a Token</a>
-                <a href="Contact.html" class="link">View Hidden Content</a>
-            </div>
+<!-- TOKEN MODAL (popup) -->
+<div id="tokenModal">
+  <div class="modal-box">
+    <button class="close-modal">×</button>
+    <h3>Enter Access Token</h3>
+    <input type="text" id="modalTokenInput" placeholder="Paste token here">
+    <button id="modalVerifyBtn">Verify</button>
+    <div class="msg" id="modalMsg"></div>
+  </div>
+</div>
 
-                <script src="Coffeescript.js"></script>
-                
-            </div>
-            <br><br><br><br><br>
-            <button class="Btn" id="scrollToTopButton">
-                <svg class="svgIcon" viewBox="0 0 384 512">
-                    <path
-                    d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
-                    ></path>
-                </svg>
-            </button>
-        </div>
-        <script src="Script.js"></script>
-         <script>
-  // === TOKEN GATE FOR card.html ===
-  const tokenFormHTML = `
-    <div style="text-align:center; margin:2rem 0; font-family:system-ui;">
-      <input type="text" id="tokenInput" placeholder="Enter token" style="padding:0.6rem; width:220px; font-size:1rem;">
-      <button id="tokenSubmit" style="padding:0.6rem 1rem; background:#00fdd3; border:none; color:black; font-weight:bold; cursor:pointer; margin-left:0.5rem;">
-        View Hidden Content
-      </button>
-      <p id="tokenMsg" style="color:#ff0; margin-top:0.8rem; font-weight:bold;"></p>
-    </div>
-  `;
+<script>
+  // === ELEMENTS ===
+  const contentDiv   = document.getElementById('content');
+  const modal        = document.getElementById('tokenModal');
+  const openBtn      = document.getElementById('openTokenModal');
+  const closeBtn     = document.querySelector('.close-modal');
+  const tokenInput   = document.getElementById('modalTokenInput');
+  const verifyBtn    = document.getElementById('modalVerifyBtn');
+  const msg          = document.getElementById('modalMsg');
 
-  // Replace the #content area with token form initially
-  const contentDiv = document.getElementById('content');
-  contentDiv.style.marginLeft = '10%';
-  contentDiv.innerHTML = tokenFormHTML;
+  // === OPEN / CLOSE MODAL ===
+  openBtn.onclick = () => { modal.classList.add('show'); tokenInput.focus(); };
+  closeBtn.onclick = () => modal.classList.remove('show');
+  modal.onclick = (e) => { if (e.target === modal) modal.classList.remove('show'); };
 
-  document.getElementById('tokenSubmit').onclick = async () => {
-    const token = document.getElementById('tokenInput').value.trim();
-    const msg = document.getElementById('tokenMsg');
+  // === VERIFY TOKEN ===
+  verifyBtn.onclick = async () => {
+    const token = tokenInput.value.trim();
     if (!token) return msg.textContent = 'Enter a token';
 
     msg.textContent = 'Verifying...';
-
     try {
       const res = await fetch('/api/verify-token', {
         method: 'POST',
@@ -101,10 +96,14 @@
       const data = await res.json();
 
       if (data.valid) {
-        // Load FULL card.html
+        // SUCCESS → Load full card.html
         const cardRes = await fetch('card.html');
         const cardHTML = await cardRes.text();
         contentDiv.innerHTML = cardHTML;
+
+        // Hide banner & close modal
+        openBtn.parentElement.style.display = 'none';
+        modal.classList.remove('show');
         msg.textContent = '';
       } else {
         msg.textContent = data.message || 'Invalid token';
@@ -113,7 +112,16 @@
       msg.textContent = 'Error. Try again.';
     }
   };
-</script>      
+
+  // Optional: Press Enter in input → verify
+  tokenInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') verifyBtn.click();
+  });
+</script>
+        </div>
+        <script src="Script.js"></script>
+              
     </body>
+
 
 </html>
