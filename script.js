@@ -1,99 +1,113 @@
-window.onload = function() {
-  const form = document.getElementById('signup-form');
-  const nameInput = document.getElementById('textarea');
-  const emailInput = document.getElementById('email');
-  const emailError = document.getElementById('emailError');
+// script.js — FIXED & OPTIMIZED
+document.addEventListener('DOMContentLoaded', function () {
+    // === ELEMENTS ===
+    const loader = document.getElementById('loader');
+    const mainContent = document.getElementById('main-content');
+    const scrollBtn = document.getElementById('scrollToTopButton');
+    const form = document.getElementById('signup-form');
+    const nameInput = document.getElementById('textarea');
+    const emailInput = document.getElementById('email');
+    const emailError = document.getElementById('emailError');
 
-  form.addEventListener('submit', function(event) {
-      let isValid = true;
+    // === 1. FORM VALIDATION ===
+    if (form) {
+        form.addEventListener('submit', function (event) {
+            let isValid = true;
 
-      if (nameInput.value.trim() === '') {
-          isValid = false;
-          alert('You did not type anything in the comment section area! Please Try Typing Something.');
-      }
+            if (nameInput && nameInput.value.trim() === '') {
+                isValid = false;
+                alert('You did not type anything in the comment section area! Please Try Typing Something.');
+            }
 
-      if (emailInput.value.trim() === '') {
-          isValid = false;
-          emailError.textContent = 'Please enter your email.';
-          
-      } else {
-          emailError.textContent = '';
-      }
+            if (emailInput && emailInput.value.trim() === '') {
+                isValid = false;
+                if (emailError) emailError.textContent = 'Please enter your email.';
+            } else {
+                if (emailError) emailError.textContent = '';
+            }
 
-      if (!isValid) {
-          event.preventDefault(); 
-      }
-  });
-};
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+    }
 
-scrollToTopButton.addEventListener('click', () => {
-  console.log('Button clicked');
-  document.body.scrollTop = 0; 
-  document.documentElement.scrollTop = 0; 
-});
+    // === 2. SCROLL TO TOP BUTTON ===
+    if (scrollBtn) {
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
 
-window.addEventListener('load', function() {
-    // Check if the user has visited before
-    if (!localStorage.getItem('visitedBefore')) {
-        // If it's the first visit, show the loader for 5 seconds
-        setTimeout(function() {
-            // Hide the loader after 5 seconds
-            document.getElementById('loader').style.display = 'none';
-            // Show the main content after the loader is hidden
-            document.getElementById('main-content').style.display = 'block';
-        }, 5000); // 5000 milliseconds = 5 seconds
+        // Show/hide button on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollBtn.style.opacity = '1';
+                scrollBtn.style.pointerEvents = 'auto';
+            } else {
+                scrollBtn.style.opacity = '0';
+                scrollBtn.style.pointerEvents = 'none';
+            }
+        });
+    }
 
-        // Mark that the user has visited before by setting a value in localStorage
-        localStorage.setItem('visitedBefore', 'true');
-    } else {
-        // If the user has visited before, skip the loader and show content immediately
-        document.getElementById('loader').style.display = 'none';
-        document.getElementById('main-content').style.display = 'block';
+    // === 3. LOADER LOGIC (First visit = 5s, Return = instant) ===
+    if (loader && mainContent) {
+        if (!localStorage.getItem('visitedBefore')) {
+            // First visit: show loader for 5 seconds
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    mainContent.style.display = 'block';
+                }, 300); // fade out
+                localStorage.setItem('visitedBefore', 'true');
+            }, 5000);
+        } else {
+            // Return visitor: skip loader
+            loader.style.display = 'none';
+            mainContent.style.display = 'block';
+        }
+    }
+
+    // === 4. RESPONSIVE BACKGROUND IMAGE ===
+    function setBackgroundImage() {
+        const screenWidth = window.innerWidth;
+        let imgSrc = '';
+
+        if (screenWidth >= 1025) {
+            imgSrc = 'images/wave for pc.webp';
+        } else if (screenWidth <= 1024 && screenWidth > 480) {
+            imgSrc = 'images/wave for tablet.webp';
+        } else if (screenWidth <= 480) {
+            imgSrc = 'images/wave for phone.jpg';
+        }
+
+        const img = new Image();
+        img.onload = () => {
+            document.documentElement.style.backgroundImage = `url('${imgSrc}')`;
+            document.documentElement.style.backgroundSize = 'cover';
+            document.documentElement.style.backgroundPosition = 'center';
+            document.documentElement.style.backgroundAttachment = 'fixed';
+        };
+        img.onerror = () => {
+            console.error('Background image failed to load:', imgSrc);
+            document.documentElement.style.backgroundColor = '#000';
+        };
+        img.src = imgSrc;
+    }
+
+    // Run once on load
+    setBackgroundImage();
+
+    // Update on resize
+    window.addEventListener('resize', setBackgroundImage);
+
+    // === 5. MOBILE TOO SMALL? ===
+    if (window.innerWidth < 360) {
+        document.body.innerHTML = `
+            <p style="color:#fff; text-align:center; padding:2rem; font-family:system-ui;">
+                <strong>Device Not Supported</strong><br>
+                Please use a device with a bigger screen.
+            </p>`;
     }
 });
-
-
-
-
-window.onload = function() {
-    var img = new Image();  // Create a new image element
-    var screenWidth = window.innerWidth;
-
-    // Choose the correct image based on screen width
-    if (screenWidth >= 1025) { // PC devices
-        img.src = 'images/wave for pc.webp';
-    } else if (screenWidth <= 1024 && screenWidth > 480) { // Tablet devices
-        img.src = 'images/wave for tablet.webp';
-    } else if (screenWidth <= 480) { // Phone devices
-        img.src = 'images/wave for phone.jpg';
-    }
-
-    // Once the image is fully loaded, set it as the background
-    img.onload = function() {
-        document.documentElement.style.backgroundImage = 'url(' + img.src + ')';
-    };
-
-    // If something goes wrong and the image doesn't load, fallback to the white background
-    img.onerror = function() {
-        console.error('Image failed to load.');
-        document.documentElement.style.backgroundColor = '#000000';
-    };
-};
-
-if (window.innerWidth < 360) {
-    document.body.innerHTML = ' <p class="notsupported">Device Not Supported to view the Contents of this Website</p> <lable class="screen">Please use a device with a bigger SCREEN</lable><br><br>'; // Remove all content
-}
-
-
-
-/*window.onscroll = function(){
-    var button = document.getElementById("scrollToTopButton");
-    if(window.scrollY >= 500){
-        button.style.display = "block";
-    }
-    else{
-        button.style.display = "none";
-
-    }
-}*/
-

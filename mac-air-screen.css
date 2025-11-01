@@ -89,4 +89,14 @@
         border-radius: 10px;
         width: 10%; 
     }
+
+    .card button {
+    
+    width: 25%;}
+
+    #pha{
+        padding-left: 200px;
+        padding-right: 200px;
+
+    }
 }

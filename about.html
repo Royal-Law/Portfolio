@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-
         <title>About</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,155 +11,195 @@
         <link rel="stylesheet" href="MAC-AIR-screen.css">
         <link rel="stylesheet" href="Mobile-Devices-Screens.css">
         <link rel="stylesheet" href="Tablet Screens.css">
-        
         <link rel="stylesheet" href="CoffeeStyles.css">
         <style>
-  /* ---- MODAL (popup) ---- */
-  #grokTokenModal {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.85);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    font-family: system-ui, sans-serif;
-  }
-  #grokTokenModal.grok-show { display: flex; }
+            #grokTokenModal {
+                display: none;
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: rgba(0,0,0,0.85);
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+                font-family: system-ui, sans-serif;
+            }
 
-  .grok-modal-box {
-    background: #111;
-    color: #fff;
-    padding: 2rem;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 380px;
-    text-align: center;
-    box-shadow: 0 0 30px rgba(0,253,211,0.3);
-    border: 1px solid #00fdd3;
-  }
-  .grok-modal-box h3 { margin:0 0 1rem; color:#00fdd3; }
-  .grok-modal-box input {
-    width: 100%; padding:0.8rem; margin:0.8rem 0;
-    font-size:1rem; border:1px solid #333; border-radius:6px;
-    background:#222; color:#fff;
-  }
-  .grok-modal-box button {
-    background:#00fdd3; color:#000; border:none;
-    padding:0.8rem 1.5rem; font-weight:bold;
-    border-radius:6px; cursor:pointer;
-    margin-top:0.5rem;
-  }
-  .grok-modal-box .grok-msg { margin-top:0.8rem; min-height:1.2rem; color:#ff0; font-weight:bold; }
-  .grok-close-modal {
-    position:absolute; top:1rem; right:1rem;
-    background:none; border:none; color:#aaa; font-size:1.5rem;
-    cursor:pointer;
-  }
-</style>
+            #grokTokenModal.grok-show { 
+                display: flex; 
+            }
+
+            .grok-modal-box {
+                background: #111;
+                color: #fff;
+                padding: 2rem;
+                border-radius: 12px;
+                width: 90%;
+                max-width: 380px;
+                text-align: center;
+                box-shadow: 0 0 30px rgba(0,253,211,0.3);
+                border: 1px solid #00fdd3;
+            }
+
+            .grok-modal-box h3 { margin:0 0 1rem; color:#00fdd3; }
+            .grok-modal-box input {
+                width: 100%; padding:0.8rem; margin:0.8rem 0;
+                font-size:1rem; border:1px solid #333; border-radius:6px;
+                background:#222; color:#fff;
+            }
+
+            .grok-modal-box button {
+                background:#00fdd3; color:#000; border:none;
+                padding:0.8rem 1.5rem; font-weight:bold;
+                border-radius:6px; cursor:pointer;
+                margin-top:0.5rem;
+            }
+
+            .grok-modal-box .grok-msg { 
+                margin-top:0.8rem; 
+                min-height:1.2rem; 
+                color:rgb(255, 0, 0); 
+                font-weight:bold; 
+            }
+
+            .grok-close-modal {
+                position:absolute; top:1rem; right:1rem;
+                background:none; border:none; color:#aaa; font-size:1.5rem;
+                cursor:pointer;
+            }
+        </style>
     </head>
 
     <body>
-        
-        <div id="main-content" >
+        <div class="terminal-loader" id="loader">
+            <div class="terminal-header">
+            <div class="terminal-title">Status</div>
+            <div class="terminal-controls">
+                <div class="control close"></div>
+                <div class="control minimize"></div>
+                <div class="control maximize"></div>
+            </div>
+            </div>
+            <div class="text">Loading...</div>
+        </div>
+        <div id="main-content" style="display: none;">
 
             <ul class="about-nav">                    
                 <li class="nav-item"><a class="nav-item" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-item" href="404 page.html">Projects</a></li>
                 <li class="nav-item"><a class="nav-item" href="Contact.html">Contact</a></li>
-                <li class="nav-item" ><a class="nav-item" href="About.html" style="color: #00fdd3;">About</a></li>
+                <li class="nav-item" ><a class="nav-item" href="About.html" style="color: #067aaf;">About</a></li>
             </ul><br><br><br>
 
             <div class="card" >
                 <br>
                 <div class="img">
-                    <!---<img src="images/Image 2025-09-24 at 11.21 copy.jpg">-->s
+                
                 </div>
-                <br><br><br>
+                <br><br>
                 <div id="content" style="margin-left: 10%;"></div>
-<div id="info-section"></div>
+                <div id="info-section"></div>
 
-<!-- INFO BANNER (public) -->
-<div class="grok-info-banner" style="text-align:center; margin:2rem 0; padding:1.5rem; background:#111; border:2px solid #00fdd3; border-radius:10px; color:#fff;">
-  <p><strong>Some information is hidden.</strong><br>
-     To view the full profile, you need a token. Click the button below to enter it.</p>
-  <button id="grokOpenModalBtn" style="margin-top:1rem; padding:0.8rem 1.8rem; background:#00fdd3; color:#000; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">
-    View Hidden Content
-  </button>
-</div>
-<script src="script.js"></script>
+                <!-- INFO BANNER (public) -->
+                <div class="grok-info-banner" style="text-align:center; padding:1.5rem;  color:#fff;">
+                    <p id="pha" style="flex: 1; text-align: center; line-height: 1.55; font-size: 0.99em; word-wrap: break-word; overflow-wrap: break-word; max-width: fit-content;">
+                        <strong>403 - FORBIDDEN</strong><br><br>
+                        <span style="color: white; font-size: small; font-weight: normal; font-family: Arial, Helvetica, sans-serif;">
+                            Access to detailed profile information is currently limited. Please enter a valid access token by clicking the "View Hidden Content" button to proceed.
+                            
+                            If you do not possess a token, you may request one by contacting the Site developer and Maintenainer through the Contact form or via the provided social media links, You can do that by clicking on the "Request Access Token" button
+                        </span><br><br>
 
-<!-- TOKEN MODAL (popup) -->
-<div id="grokTokenModal">
-  <div class="grok-modal-box">
-    <button class="grok-close-modal">×</button>
-    <h3>Enter Access Token</h3>
-    <input type="text" id="grokTokenInput" placeholder="Paste token here">
-    <button id="grokVerifyBtn">Verify</button>
-    <div class="grok-msg" id="grokModalMsg"></div>
-  </div>
-</div>
-            </div></div>
-            
+                        <span style="color: white; font-size: small; font-weight: normal; font-family: Arial, Helvetica, sans-serif;">
+                            IMPORTANT INFORMATION ⚠️<br> A valid access token is enclosed within the submitted CV to facilitate profile review for employer access. Tokens requested are single-use and valid only for the session in which they are issued If you reload the page the token will nolonger be useful.<br> <br>
 
-<script>
-  // === ELEMENTS (all prefixed with "grok") ===
-  const contentDiv   = document.getElementById('content');
-  const modal        = document.getElementById('grokTokenModal');
-  const openBtn      = document.getElementById('grokOpenModalBtn');
-  const closeBtn     = document.querySelector('.grok-close-modal');
-  const tokenInput   = document.getElementById('grokTokenInput');
-  const verifyBtn    = document.getElementById('grokVerifyBtn');
-  const msg          = document.getElementById('grokModalMsg');
-  const banner       = document.querySelector('.grok-info-banner');
+                            <label style="color: #ff4444; font-size: x-small; font-weight: normal; font-family: Arial, Helvetica, sans-serif;">
+                                This limitation does not apply to CV-provided tokens, which remain valid for employer use. 
+                            </label> 
+                        </span>  
+                    </p>
+     
+                    <button 
+                        onclick="window.location.href='contact.html'">
+                        Request Access Token
+                    </button>
 
-  // === OPEN / CLOSE MODAL ===
-  openBtn.onclick = () => { 
-    modal.classList.add('grok-show'); 
-    tokenInput.focus(); 
-  };
-  closeBtn.onclick = () => modal.classList.remove('grok-show');
-  modal.onclick = (e) => { 
-    if (e.target === modal) modal.classList.remove('grok-show'); 
-  };
+                    <button id="grokOpenModalBtn" >
+                        View Hidden Content
+                    </button>
+                </div>
+            </div>
 
-  // === VERIFY TOKEN ===
-  verifyBtn.onclick = async () => {
-    const token = tokenInput.value.trim();
-    if (!token) return msg.textContent = 'Enter a token';
+            <!-- TOKEN MODAL (popup) -->
+            <div id="grokTokenModal">
+                <div class="grok-modal-box">
+                    <button class="grok-close-modal"></button>
+                    <h3>Enter Access Token</h3>
+                    <input type="text" id="grokTokenInput" placeholder="Paste token here">
+                    <button id="grokVerifyBtn">Verify</button>
+                    <div class="grok-msg" id="grokModalMsg"></div>
+                </div>
+            </div>
+            <br><br><br>
+        </div>
+        
+        <script>
+            // === ELEMENTS (all prefixed with "grok") ===
+            const contentDiv   = document.getElementById('content');
+            const modal        = document.getElementById('grokTokenModal');
+            const openBtn      = document.getElementById('grokOpenModalBtn');
+            const closeBtn     = document.querySelector('.grok-close-modal');
+            const tokenInput   = document.getElementById('grokTokenInput');
+            const verifyBtn    = document.getElementById('grokVerifyBtn');
+            const msg          = document.getElementById('grokModalMsg');
+            const banner       = document.querySelector('.grok-info-banner');
 
-    msg.textContent = 'Verifying...';
-    try {
-      const res = await fetch('/api/verify-token', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token })
-      });
-      const data = await res.json();
+            // === OPEN / CLOSE MODAL ===
+            openBtn.onclick = () => { 
+                modal.classList.add('grok-show'); 
+                tokenInput.focus(); 
+            };
+            closeBtn.onclick = () => modal.classList.remove('grok-show');
+            modal.onclick = (e) => { 
+                if (e.target === modal) modal.classList.remove('grok-show'); 
+            };
 
-      if (data.valid) {
-        // Load full card.html
-        const cardRes = await fetch('card.html');
-        const cardHTML = await cardRes.text();
-        contentDiv.innerHTML = cardHTML;
+            // === VERIFY TOKEN ===
+            verifyBtn.onclick = async () => {
+                const token = tokenInput.value.trim();
+                if (!token) return msg.textContent = 'Enter a token';
 
-        // Hide banner + close modal
-        banner.style.display = 'none';
-        modal.classList.remove('grok-show');
-        msg.textContent = '';
-      } else {
-        msg.textContent = data.message || 'Invalid token';
-      }
-    } catch (err) {
-      msg.textContent = 'Error. Try again.';
-    }
-  };
+                msg.textContent = 'Verifying...';
+                try {
+                const res = await fetch('/api/verify-token', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ token })
+                });
+                const data = await res.json();
 
-  // Enter key → verify
-  tokenInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') verifyBtn.click();
-  });
-</script>
+                if (data.valid) {
+                    // Load full card.html
+                    const cardRes = await fetch('card.html');
+                    const cardHTML = await cardRes.text();
+                    contentDiv.innerHTML = cardHTML;
+
+                    // Hide banner + close modal
+                    banner.style.display = 'none';
+                    modal.classList.remove('grok-show');
+                    msg.textContent = '';
+                } else {
+                    msg.textContent = data.message || 'Invalid token';
+                }
+                } catch (err) {
+                msg.textContent = 'Error. Try again.';
+                }
+            };
+
+            // Enter key → verify
+            tokenInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') verifyBtn.click();
+            });
+        </script> 
+        <script src="Script.js"></script>     
     </body>
-
 </html>
