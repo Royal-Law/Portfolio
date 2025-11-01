@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>About</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="about.css">
+        <link rel="stylesheet" href="PC-screen.css">
+        <link rel="stylesheet" href="MAC-AIR-screen.css">
+        <link rel="stylesheet" href="Mobile-Devices-Screens.css">
+        <link rel="stylesheet" href="Tablet Screens.css">
+        
+        <link rel="stylesheet" href="CoffeeStyles.css">
+    </head>
+
+    <body>
+        <div class="terminal-loader" id="loader">
+            <div class="terminal-header">
+            <div class="terminal-title">Status</div>
+            <div class="terminal-controls">
+                <div class="control close"></div>
+                <div class="control minimize"></div>
+                <div class="control maximize"></div>
+            </div>
+            </div>
+            <div class="text">Loading...</div>
+        </div>
+        <div id="main-content" style="display: none;">
+
+            <ul class="about-nav">                    
+                <li class="nav-item"><a class="nav-item" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-item" href="404 page.html">Projects</a></li>
+                <li class="nav-item"><a class="nav-item" href="Contact.html">Contact</a></li>
+                <li class="nav-item" ><a class="nav-item" href="About.html" style="color: #00fdd3;">About</a></li>
+            </ul><br><br><br>
+
+            <div class="card" >
+                <br>
+                <div class="img">
+                    <!---<img src="images/Image 2025-09-24 at 11.21 copy.jpg">-->s
+                </div>
+                <br><br><br>
+                <div id="content" style="margin-left: 10%;"></div>
+                <div id="info-section"></div>
+
+                <script>
+                fetch('card.html')
+                    .then(response => response.text())
+                    .then(data => {
+                    document.getElementById('content').innerHTML = data;
+                    });
+                </script>
+
+            
+                <br>
+                <br><br>
+                <a href="Contact.html" class="link">Request a Token</a>
+                <a href="Contact.html" class="link">View Hidden Content</a>
+            </div>
+
+                <script src="Coffeescript.js"></script>
+                
+            </div>
+            <br><br><br><br><br>
+            <button class="Btn" id="scrollToTopButton">
+                <svg class="svgIcon" viewBox="0 0 384 512">
+                    <path
+                    d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                    ></path>
+                </svg>
+            </button>
+        </div>
+        <script src="Script.js"></script>
+        </body>            
+    </body>
+
+</html>
