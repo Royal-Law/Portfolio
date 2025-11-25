@@ -178,15 +178,17 @@
                 const data = await res.json();
 
                 if (data.valid) {
-                    // Load full card.html
-                    const cardRes = await fetch('card.html');
-                    const cardHTML = await cardRes.text();
-                    contentDiv.innerHTML = cardHTML;
-
-                    // Hide banner + close modal
-                    banner.style.display = 'none';
-                    modal.classList.remove('grok-show');
-                    msg.textContent = '';
+                  localStorage.setItem('currentToken', token);   // ← ADD THIS LINE RIGHT HERE
+                
+                  // Load full card.html
+                  const cardRes = await fetch('card.html');
+                  const cardHTML = await cardRes.text();
+                  contentDiv.innerHTML = cardHTML;
+                
+                  // Hide banner + close modal
+                  banner.style.display = 'none';
+                  modal.classList.remove('grok-show');
+                  msg.textContent = '';
                 } else {
                     msg.textContent = data.message || 'Invalid token';
                 }
@@ -202,4 +204,5 @@
         </script> 
         <script src="Script.js"></script>     
     </body>
+
 </html>
