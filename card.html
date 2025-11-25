@@ -180,22 +180,18 @@
                 <button onclick="viewPdf('het_qualifications')">View HET Qualification(s)</button>
 
                 <script>
-                // This function runs only AFTER the user entered a valid token
-                async function viewPdf(file_type) {
-                // Grab the token that was used to unlock the page
-                const token = localStorage.getItem('currentToken');
-                if (!token) {
-                    alert('Token missing – please re-enter your access token');
-                    return;
-                }
-
-                const url = `/api/view-document?file_type=${file_type}&token=${token}`;
-                window.open(url, '_blank');
-                }
-
-                // Save token when the profile is successfully unlocked (add this in about.html)
+                    function viewPdf(file_type) {
+                      const token = localStorage.getItem('currentToken');
+                      if (!token) {
+                        alert('Access denied. Please re-enter your token.');
+                        document.getElementById('grokOpenModalBtn')?.click();
+                        return;
+                      }
+                    
+                      const url = `/.netlify/functions/view-document?file_type=${file_type}&token=${token}`;
+                      window.open(url, '_blank', 'noopener,noreferrer');
+                    }
                 </script>
-                
 
 
     </body>
