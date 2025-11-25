@@ -180,13 +180,7 @@
                 <button onclick="viewPdf('het_qualifications')">View HET Qualification(s)</button>
 
                 <script>
-                    function viewPdf(file_type) {
-                      const token = localStorage.getItem('currentToken');
-                      if (!token) {
-                        alert('Access denied. Please re-enter your token.');
-                        document.getElementById('grokOpenModalBtn')?.click();
-                        return;
-                      }
+                    
                     
                       const url = `/.netlify/functions/view-document?file_type=${file_type}&token=${token}`;
                       window.open(url, '_blank', 'noopener,noreferrer');
