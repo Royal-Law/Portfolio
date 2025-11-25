@@ -172,6 +172,31 @@
                 <span>More Information</span>
                 <p class="info">
                     If you'd like to work with me or learn more about my background, including my personal details or CV, feel free to click the 'Work With Me' button below, fill out the form, or use the provided links to contact me via email or WhatsApp!
-                </p>
+                </p></div>
+
+                <button onclick="viewPdf('cv')">View CV</button>
+                <button onclick="viewPdf('matric_certificate')">View Matric Certificate</button>
+                <button onclick="viewPdf('certifications')">View Certifications</button>
+                <button onclick="viewPdf('het_qualifications')">View HET Qualification(s)</button>
+
+                <script>
+                // This function runs only AFTER the user entered a valid token
+                async function viewPdf(file_type) {
+                // Grab the token that was used to unlock the page
+                const token = localStorage.getItem('currentToken');
+                if (!token) {
+                    alert('Token missing – please re-enter your access token');
+                    return;
+                }
+
+                const url = `/api/view-document?file_type=${file_type}&token=${token}`;
+                window.open(url, '_blank');
+                }
+
+                // Save token when the profile is successfully unlocked (add this in about.html)
+                </script>
+                
+
+
     </body>
 </html>
