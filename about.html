@@ -202,7 +202,21 @@
                 if (e.key === 'Enter') verifyBtn.click();
             });
         </script> 
-        <script src="Script.js"></script>     
+        <script src="Script.js"></script>  
+        <script>
+            // Global function – available everywhere after token is verified
+            function viewPdf(file_type) {
+              const token = localStorage.getItem('currentToken');
+              if (!token) {
+                alert('Access denied. Please re-enter your token.');
+                document.getElementById('grokOpenModalBtn')?.click();
+                return;
+              }
+              const url = `/.netlify/functions/view-document?file_type=${file_type}&token=${token}`;
+              window.open(url, '_blank', 'noopener,noreferrer');
+            }
+        </script>
     </body>
 
 </html>
+
