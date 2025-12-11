@@ -1,4 +1,4 @@
-// netlify/functions/view-document.js
+/*
 const { Pool } = require('pg');
 
 const GLOBAL_TOKEN = 'employer-master-access-2025'; // ← Your master token
@@ -79,6 +79,69 @@ exports.handler = async (event) => {
 
   } catch (err) {
     console.error('view-document error:', err);
+    return { statusCode: 500, body: JSON.stringify({ error: 'Server error' }) };
+  } finally {
+    client.release();
+  }
+};*/
+
+
+// netlify/functions/view-document.js
+
+const { Pool } = require('pg');
+
+const MASTER_TOKEN = 'employer-master-access-2025'; // Only this person gets documents
+
+exports.handler = async (event) => {
+  if (event.httpMethod !== 'GET') {
+    return { statusCode: 405, body: 'Method Not Allowed' };
+  }
+
+  const { file_type, token } = event.queryStringParameters || {};
+
+  if (!file_type || !token) {
+    return { statusCode: 400, body: JSON.stringify({ error: 'Missing parameters' }) };
+  }
+
+  // BLOCK EVERYONE EXCEPT THE MASTER TOKEN FROM SEEING ANY DOCUMENT
+  if (token !== MASTER_TOKEN) {
+    return {
+      statusCode: 403,
+      body: JSON.stringify({
+        error: 'Access denied. Documents are reserved for employers only.'
+      })
+    };
+  }
+
+  // Only the employer with the exact master token reaches here
+  const pool = new Pool({ connectionString: process.env.NEON_DB_URL });
+  const client = await pool.connect();
+
+  try {
+    const result = await client.query(
+      'SELECT file_data, file_name FROM documents WHERE file_type = $1',
+      [file_type]
+    );
+
+    if (result.rowCount === 0) {
+      return { statusCode: 404, body: JSON.stringify({ error: 'Document not found' }) };
+    }
+
+    const { file_data, file_name } = result.rows[0];
+
+    return {
+      statusCode: 200,
+      isBase64Encoded: true,
+      headers: {
+        'Content-Type': 'application/pdf',
+        'Content-Disposition': `inline; filename="${file_name || file_type + '.pdf'}"`,
+        'Cache-Control': 'no-store',
+      },
+      body: Buffer.from(file_data).toString('base64'),
+    };
+
+  } catch (err) {
+    console.error('Error:', err);
     return { statusCode: 500, body: JSON.stringify({ error: 'Server error' }) };
   } finally {
     client.release();
