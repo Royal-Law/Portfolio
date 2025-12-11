@@ -1,0 +1,102 @@
+@media only screen and (min-width:1000px) and (max-width:  1280px) {
+    .form-container {
+        width: 32%;
+        margin-left: 34%;
+        margin-top: -10px;
+
+        
+    }
+
+    /*for about page*/
+    .card { 
+        margin-left: 10%;
+        width: 80%;;
+    }
+    
+    .socials-wrapper {
+        margin-left: -10px;
+        width: 95%;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        padding: 10px;
+        background: linear-gradient(#212121, #212121) padding-box;
+        border: none;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        bottom: 18px;
+        right: 80px;
+        cursor: pointer;
+        size: 10px;
+    }
+
+    .social {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid rgb(194, 194, 194);
+        left: 10px;
+    }
+
+    .twitter:hover {
+        background: linear-gradient(45deg, #66757f, #00acee, #36daff, #dbedff);
+    }
+
+    .facebook:hover {
+        background: linear-gradient(45deg, #134ac0, #316ff6, #78a3ff);
+    }
+
+    .mail:hover {
+        background: linear-gradient(45deg, #872419, #db4a39, #ff7061);
+    }
+
+    .Whatsapp:hover {
+        background: #12a50b;
+    }
+       
+    .social svg {
+        fill: rgb(255, 255, 255);
+        height: 20px;
+    }
+
+    @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+      
+        50% {
+          background-position: 100% 50%;
+        }
+      
+        100% {
+          background-position: 0% 50%;
+        }
+    }
+
+
+    #socials{
+        margin-top: 35px;
+        width: 94%;
+
+    }
+
+    .link{ /*thisis for the work with me link on the about tab*/
+        padding: 10px 20px;
+        margin-left: 30px;
+        border-radius: 10px;
+        width: 10%; 
+    }
+
+    .card button {
+    
+    width: 25%;}
+
+    #pha{
+        padding-left: 200px;
+        padding-right: 200px;
+
+    }
+}

@@ -1,0 +1,144 @@
+/* Media query for PC devices */
+@media only screen and (max-width: 1920px) {
+    .page_404 {
+        padding: 0px 0;
+        background: #fff;
+        font-family: 'Arvo', serif;
+    }
+    
+    .four_zero_four_bg, img {
+        height: 400px;
+        background-position: center;
+    }
+    
+    .four_zero_four_bg, h1 {
+        font-size: 80px;
+        margin-bottom: -15px;
+    }
+    
+    .link_404 {
+        color: #fff!important;
+        padding: 10px 20px;
+        background: #39ac31;
+        margin: 20px 0;
+        display: inline-block;
+        border-radius: 40px;
+        text-decoration: none;
+    }
+    
+    .contant_box_404 {
+        margin-top: -50px;
+        vertical-align: middle;
+    }
+    .page_404{
+        margin-top: 150px;
+    }
+
+}
+
+/* Media query for tablet devices */
+@media only screen and (max-width: 1024px) {
+    .four_zero_four_bg{
+        height: 300px;
+    }
+
+    .four_zero_four_bg, h1 {
+        font-size: 100px;
+    }
+
+    .page_404{
+        margin-top: 30%;
+    }
+
+    .link_404 {
+        color: #fff!important;
+        padding: 10px 20px;
+        background: #39ac31;
+        margin: 20px 0;
+        display: inline-block;
+        border-radius: 40px;
+        font-size: medium;
+        text-decoration: none;
+    }
+    
+
+    p{
+        font-size: 25px;
+    }
+
+}
+
+/* Media query for mobile devices 
+@media only screen and (max-width: 768px) {
+    .four_zero_four_bg, img {
+        margin-top: 20px;
+        height: 200px;
+    }
+    .four_zero_four_bg, h1 {
+        font-size: 40px;
+    }
+    .link_404 {
+        padding: 5px 10px;
+    }
+
+    .page_404{
+        display: flex;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .link_404 {
+        color: #fff!important;
+        padding: 10px 20px;
+        background: #39ac31;
+        margin: 20px 0;
+        display: inline-block;
+        border-radius: 40px;
+        font-size: medium;
+    }
+
+}*/
+
+
+/* Media query for smaller mobile devices */
+@media only screen and (max-width: 480px) {
+
+    img{
+        height: 100%;
+        width: 100%;
+    }
+    .four_zero_four_bg{
+        height: 100px;
+    }
+
+    .four_zero_four_bg {
+        font-size: 100px;
+    }
+
+    h1 {
+        font-size: 100px;
+    }
+
+    .page_404{
+        margin-top: 3%;
+
+    }
+
+    .link_404 {
+        color: #fff!important;
+        padding: 10px 20px;
+        background: #39ac31;
+        margin: 20px 0;
+        display: inline-block;
+        border-radius: 40px;
+        font-size: medium;
+        text-decoration: none;
+    }
+
+    p{
+        font-size: 13px;
+    }
+
+   
+   
+}

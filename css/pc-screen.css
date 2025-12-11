@@ -1,0 +1,201 @@
+/* Media query for PC devices */
+@media only screen and (min-width:1000px) and (max-width:  2560px) {
+    body {
+        padding: 0 10px;
+    }
+
+    .home-nav, .projects-nav, .contact-nav, .about-nav {
+        padding: 0 10px;
+    }
+
+    .nav-item {
+        padding: 15px;
+    }
+
+    
+
+    html{
+        background-color: #ffffff; /* Temporary white background */
+        background-size: cover;   
+        
+
+    }
+    
+    body::after {
+        background-color: #ffffff; /* Temporary white background */
+        background-size: cover;
+        display: none;
+    }
+
+    
+
+    h3{
+        
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-right: 80%;
+        margin-top: 2%;
+        display: block;
+        margin-bottom: 5px;
+        color: #717171;
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+    
+    .form-container {
+        width: 50%;
+        margin-top: 50px;
+    }
+
+    .form-container .form-group input,
+    .form-container .form-group textarea {
+        width: 90%; 
+    }
+        
+
+    .socials-wrapper {
+        margin-left: -10px;
+        width: 95%;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        padding: 10px;
+        background: linear-gradient(#212121, #212121) padding-box;
+        border: none;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        bottom: 18px;
+        right: 80px;
+        cursor: pointer;
+        size: 10px;
+    }
+
+    .social {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid rgb(194, 194, 194);
+        left: 10px;
+    }
+
+    .twitter:hover {
+        background: linear-gradient(45deg, #66757f, #00acee, #36daff, #dbedff);
+    }
+
+    .facebook:hover {
+        background: linear-gradient(45deg, #134ac0, #316ff6, #78a3ff);
+    }
+
+    .mail:hover {
+        background: linear-gradient(45deg, #872419, #db4a39, #ff7061);
+    }
+
+    .Whatsapp:hover {
+        background: #12a50b;
+    }
+       
+    .social svg {
+        fill: rgb(255, 255, 255);
+        height: 20px;
+    }
+
+    @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+      
+        50% {
+          background-position: 100% 50%;
+        }
+      
+        100% {
+          background-position: 0% 50%;
+        }
+    }
+
+    .Btn, .socials-wrapper{
+        position: fixed;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        overflow: hidden;
+        
+
+    }
+
+    .Btn{
+        bottom: 25px;
+        right: 100px;
+    }
+
+
+    #socials{
+        margin-top: 35px;
+        width: 94%;
+
+    }
+
+    .terminal-loader {
+        width: 100%;
+        max-width: 400px;
+        height: 200px;
+        background: #1c1c1c;
+        border: 1px solid #ffffff3e;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-left: 40%;
+        margin-top: 15%;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        vertical-align: middle;
+    }
+
+    .Btn:hover {
+        width: 140px;
+        border-radius: 50px;
+        transition-duration: 0.3s;
+        background-color: rgb(20, 20, 20);
+        align-items: center;
+    }
+      
+    .Btn:hover::before {
+        font-size: 13px;
+        opacity: 1;
+        bottom: unset;
+        /* transform: translateY(-30px); */
+        transition-duration: 0.3s;
+    }
+
+    .card { 
+        margin-left: 34%;
+        width: 30%;;
+    }
+
+    .link{ /*thisis for the work with me link on the about tab*/
+        padding: 10px 20px;
+        margin-left: 30px;
+        border-radius: 10px;
+        width: 20%; 
+    }
+
+    .info{
+        width: 80%;
+        padding-left: 10%;
+    }
+
+    .card .img { /*for the image in the card*/
+        background-image: url('../images/Image 2025-09-24 at 11.21 copy.jpg');
+        /*filter: blur(6px);*/
+        background-size: cover; /* or 'contain' depending on the effect you want */
+        background-position: center; /* Ensures the image is centered */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        border-radius: 100%;
+        margin: auto;
+        width: 15em; /* Ensure width is consistent */
+        height: 15.5em; /* Ensure height is consistent */
+    }
+}

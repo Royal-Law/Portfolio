@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            @media only screen and (min-width: 800px) and (max-width: 3000px) {
+                .container {
+                    display: flex;
+                    gap: 50px;
+                    padding: 20px;
+                    margin-left: -20px;
+                }
+
+                .mini-info {
+                    width: 45%;
+                    font-size: 15px;
+                    height: 245px;
+                    border-radius: 30px;
+                    background: #212121;
+                    color: #212121;
+                    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+                                -15px -15px 30px rgb(60, 60, 60);
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0;
+                    box-sizing: border-box;
+                    text-align: center;
+                }
+
+                /* Title: Fixed at top, same level */
+                .mini-info span {
+                    display: block;
+                    font-weight: bold;
+                    font-size: 20px;
+                    padding: 20px 20px 10px;
+                    margin: 0;
+                    text-align: center;
+                }
+
+                /* Scrollable content area */
+                .content {
+                    flex: 1;
+                    padding-left: 10px !important;
+                    overflow-y: auto;
+                    text-align: center;
+                    line-height: 1.55;
+                    font-size: 0.99em;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                }
+
+                /* Hide scrollbar but keep functionality (optional beauty) */
+                .content::-webkit-scrollbar {
+                    width: 6px;
+                }
+                .content::-webkit-scrollbar-track {
+                    background: transparent;
+                }
+                .content::-webkit-scrollbar-thumb {
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 10px;
+                }
+
+                .info-section {
+                    display: none;
+                }
+            }
+
+            @media only screen and (max-width: 770px) {
+                .container {
+                    display: none !important;
+                }
+
+                .info-section{
+                    display: block;
+                    margin-left: -30px !important;
+                }
+            }
+
+            body {
+            user-select: none;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="mini-info">
+                <span>About Me</span>
+                <div class="content">
+                    <p class="info"> 
+                        Online, I am known with the alias 王Ｌａｗ, but professionally, I am CHOENE J MOKGOSNA - an aspiring IT professional with a solid foundation in web application development and a passion for solving real-world problems through technology. I am proficient in a range of programming languages and have hands-on experience building responsive, user-friendly websites and applications. I take pride in writing clean, efficient code and applying modern UI/UX principles to deliver intuitive digital experiences. Driven by continuous learning, I am committed to growing into a developer who creates scalable, impactful solutions that meet both user and business needs.
+                    </p>
+                </div>
+            </div>
+            <div class="mini-info">
+                <span>Programming Languages</span>
+                <div class="content">
+                    <p class="info">
+                        I am proficient in a range of programming languages including <label>Python</label>, <label>C++</label>, <label>JavaScript</label>, and <label>PHP</label>. My experience with <label>Web Technologies</label> such as HTML, CSS, and modern UI/UX design principles enables me to build responsive, visually appealing, and user-friendly websites and applications. I focus on writing clean, efficient code and developing structured, interactive digital solutions that align with both user expectations and business goals.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="mini-info">
+                <span>Experience & Certifications</span>
+                <div class="content">
+                    <p class="info">
+                        I completed a Learnership in MCSE/MCSA, earning certifications in <label>AZ-900</label> and <label>MD-101</label>, which provided hands-on experience with IT systems and cloud technologies. I also hold the <label>OCI Data Science Professional</label> certification, further strengthening my skills in cloud-based analytics and data-driven problem solving. My journey in IT has been both challenging and rewarding, and I remain committed to growing as a developer through continuous learning and practical application.
+                    </p>
+                </div>
+
+            </div>
+            <div class="mini-info">
+                <span>Technical IT Skills</span>
+                <div class="content">
+                    <p class="info"> In addition to my programming skills, I have strong technical IT skills, including installing and configuring operating systems such as <label>Linux</label>,  <label>Windows</label> and <label>MacOS</label>. I am also capable of troubleshooting and fixing various software-related problems. These practical skills give me a well-rounded approach to IT, combining both development and technical support.
+
+                    As I continue to learn and develop my skills, my ultimate goal is to become a proficient programmer, building solutions that make a real difference.
+                    </p>
+                </div>
+            </div>
+        </div> 
+
+        <div class="info-section">
+                <span>About Me</span>
+                <p class="info"> Hi There, I'm CHOENE JIMMY MOKGOSNA, an aspiring IT professional with a passion for programming and Technology. I’ve been fascinated by technology from a young age, and this interest has only grown over time. I love working with code since it constantly challenges me to think outside the box and find creative solutions.</p>
+
+                <br>
+                <span>Programming Languages</span>
+                <p class="info">
+                    I know a variety of programming languages including <label>Python</label>, <label>C++</label>, <label>JavaScript</label>, and <label>PHP</label>. I also have experience with <label>Web Technologies</label> using HTML, CSS, and UI/UX design principles, which allows me to create visually appealing, user-friendly websites with both structure, style, and interactivity
+                </p>
+                <br>
+
+                
+                <span>Experience</span>
+                <p class="info"> 
+                    I completed a Learnership in MCSE/MCSA with certifications in <label>AZ-900</label> and <label>MD-101</label>, which gave me practical experience in IT systems and cloud technologies. My journey in IT has been an exciting one, and I am determined to grow further as a programmer. Coding is my true passion, and I am committed to honing my skills in this field.
+                    
+                </p>
+
+                <br>
+                <span>Technical IT Skills</span>
+                <p class="info">
+                    In addition to my programming skills, I have strong technical IT skills, including installing and configuring operating systems such as <label>Linux</label> and <label>Windows</label>. I am also capable of troubleshooting and fixing various software-related problems. These practical skills give me a well-rounded approach to IT, combining both development and technical support.
+
+                    As I continue to learn and develop my skills, my ultimate goal is to become a proficient programmer, building solutions that make a real difference.
+                </p>
+
+                <!--<br><br>
+                <span>Goal(s)</span>
+                <p class="info">
+                    As I continue to learn and develop my skills, my ultimate goal is to become a proficient programmer, building solutions that make a real difference.
+
+                    If you'd like to know more about me, such as my personal details, CV, or any other information, feel free to click the "Work With Me" link!
+                </p>-->
+
+                <!--<br>
+                <span>More Information</span>
+                <p class="info" id="hi">
+                    Please be advised that this is a demonstration site. To access the full, unblurred version, complete with links to WhatsApp, Twitter, and Facebook, kindly click on the <label>'Contact'</label> tab in the navigation bar above and fill out the form. Alternatively, you can use the email button to send a direct email. I will review your request and, if appropriate, provide you with the link to the full version of the site.
+                    
+                    <br><br>
+                    Additionally, if you'd like to <label>collaborate</label> or learn more about my <label>professional background</label>, including my <label>Qualifications</label> and <label>CV</label>, please follow the same procedure.
+                </p>-->
+
+                <br>
+                <span>More Information</span>
+                <p class="info">
+                    If you'd like to work with me or learn more about my background, including my personal details or CV, feel free to click the 'Work With Me' button below, fill out the form, or use the provided links to contact me via email or WhatsApp!
+                </p></div>
+
+                <button onclick="viewPdf('cv')">View CV</button>
+                <button onclick="viewPdf('matric_certificate')" disabled>View Matric Certificate</button>
+                <button onclick="viewPdf('certifications')">View Certifications</button>
+                <button onclick="viewPdf('het_qualifications')">View HET Qualification</button>
+
+                <script>
+                // This function runs only AFTER the user entered a valid token
+                async function viewPdf(file_type) {
+                // Grab the token that was used to unlock the page
+                const token = localStorage.getItem('currentToken');
+                if (!token) {
+                    alert('Token missing – please re-enter your access token');
+                    return;
+                }
+
+                const url = `/api/view-document?file_type=${file_type}&token=${token}`;
+                window.open(url, '_blank');
+                }
+
+                // Save token when the profile is successfully unlocked (add this in about.html)
+                </script>
+                
+
+
+    </body>
+</html>

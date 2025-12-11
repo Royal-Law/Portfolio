@@ -1,0 +1,10 @@
+[build]
+  command = ""
+  publish = "."
+  functions = "netlify/functions"
+
+# Public API endpoint for Netlify Functions
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200

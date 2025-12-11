@@ -1,0 +1,581 @@
+html {
+    scroll-behavior: smooth;
+    text-align: center;
+    display: block;
+    padding: 0 20px;
+    text-decoration: none;
+}
+
+html, body{
+    
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+    padding: 0%;
+    overflow-x: hidden;
+    overflow-y:visible;
+}
+
+img {
+    width: 50px;; 
+    height: 50px; 
+}
+
+.home-nav, .projects-nav, .contact-nav, .about-nav {
+    display: inline-flex;
+    background-color: #000000;
+    overflow: hidden;
+    padding: 0 20px;
+    border-radius: 40px; 
+}
+
+.home-nav,.contact-nav, .about-nav  {
+    box-shadow: 0 10px 40px #067aaf;
+    :not(.is-active):hover{color:#067aaf}
+}
+
+
+
+
+.nav-item {
+    color: #83818c;
+    padding: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+    z-index: 1;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    overflow: hidden;
+}
+
+.nav-item::before {
+    content: "";
+    bottom: -6px;
+    left: 0;
+    background-color: #dfe2ea;
+    border-radius: 8px 8px 0 0;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.nav-indicator {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    transition: 0.4s;
+    height: 5px;
+    z-index: 1;
+    border-radius: 8px 8px 0 0;
+}
+
+.form-container .form-group input,
+    .form-container .form-group textarea {
+        width: 90%; 
+    }
+
+.form-container{
+
+    width: 90%;        
+    max-width: 600px;  
+    margin: 0 auto;    
+    background: linear-gradient(#212121, #212121) padding-box,
+                linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
+    border: 2px solid transparent;
+    padding: 32px 24px;
+    font-size: 14px;
+    font-family: inherit;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    background-size: 200% 100%;
+    animation: gradient 5s ease infinite;
+}
+
+
+  
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+  
+.form-container button:active {
+    scale: 0.95;
+}
+
+.form-container .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-container .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.form-container .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #717171;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.form-container .form-group input {
+    width: 325px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: #fff;
+    font-family: inherit;
+    background-color: transparent;
+    border: 1px solid #414141;
+}
+
+.form-container .form-group textarea {
+    width: 325px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    resize: none;
+    color: #fff;
+    height: 96px;
+    border: 1px solid #414141;
+    background-color: transparent;
+    font-family: inherit;
+}
+
+.form-container .form-group input::placeholder {
+    opacity: 0.5;
+}
+
+textarea::placeholder {
+    color: #414141;
+}
+
+.form-container .form-group input:focus {
+    outline: none;
+    border-color: #e81cff;
+}
+
+.form-container .form-group textarea:focus {
+    outline: none;
+    border-color: #e81cff;
+}
+
+.form-container .form-submit-btn {
+    /*display: flex;*/
+    align-items: flex-start;
+    justify-content: center;
+    align-self: flex-start;
+    font-family: inherit;
+    color: #717171;
+    font-weight: 600;
+    width: 40%;
+    background: #313131;
+    border: 1px solid #414141;
+    padding: 12px 16px;
+    font-size: inherit;
+    gap: 8px;
+    margin-top: 8px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.form-container .form-submit-btn:hover {
+    background-color: #fff;
+    border-color: #ffffff;
+    color: #000000;
+}
+
+.star{
+    color-scheme: red;
+}
+
+.Btn{
+    border: none;
+    cursor: pointer;
+    size: 10px;
+}
+
+
+.Btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(rgb(20, 20, 20), rgb(20, 20, 20)) padding-box,
+    linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
+    border: 2px solid transparent;
+    background-size: 200% 100%;
+    animation: gradient 5s ease infinite;
+    font-weight: 600;
+    transition-duration: 0.3s;
+
+}
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+  
+    50% {
+      background-position: 100% 50%;
+    }
+  
+    100% {
+      background-position: 0% 50%;
+    }
+}
+  
+.svgIcon {
+    width: 12px;
+    transition-duration: 0.3s;
+}
+  
+.svgIcon path {
+    fill: #067aaf;
+}
+
+.Btn:hover .svgIcon {
+    /* width: 20px; */
+    transition-duration: 0.3s;
+    transform: translateY(-200%);
+}
+  
+.Btn::before {
+    position: absolute;
+    bottom: -20px;
+    content: "Back to Top";
+    color: white;
+    /* transition-duration: .3s; */
+    font-size: 0px;
+}
+
+.index-scroll-button{
+    box-shadow: 0px 5px 25px #ffffff;
+}
+/* Ends here*/
+
+p{
+    color: whitesmoke;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-left: 10px; 
+    display: inline-block; 
+}
+
+@keyframes blinkCursor {
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+@keyframes typeAndDelete {
+    0%,
+    10% {
+        width: 0;   
+    }
+  
+    45%,
+    55% {
+      width: 5em;
+    }
+  
+    90%,
+    100% {
+      width: 0;
+    }
+}
+
+.terminal-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #343434;
+    padding: 6px;
+}
+  
+.terminal-controls {
+    position: absolute;
+    left: 10px;
+    display: flex;
+    gap: 7px;
+}
+
+.control {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #777;
+}
+
+.control.close {
+    background-color: #e33;
+}
+
+.control.minimize {
+    background-color: #ee0;
+}
+
+.control.maximize {
+    background-color: #0b0;
+}
+
+.terminal-title {
+    color: #eeeeeec1;
+}
+
+.content {
+    padding: 10px;
+}
+
+.text {
+    display: inline-block;
+    margin-top: 60px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid green;
+    animation: typeAndDelete 4s steps(11) infinite, blinkCursor 0.5s step-end infinite alternate;
+    color: rgb(0, 196, 0);
+    font-weight: 600;
+}
+
+
+/* From Uiverse.io by Praashoo7 */ 
+.card {
+  width: 17em;
+  height:auto;
+  background: #171717;
+  transition: 1s ease-in-out;
+  clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  
+}
+
+.card span {
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  display: block;
+  font-size: 1em;
+}
+
+.card .info {
+  font-weight: 400;
+  color: white;
+  display: block;
+  text-align: center;
+  font-size: 0.72em;
+  margin: 1em;
+}
+
+.card .img {
+  width: 4.8em;
+  height: 4.8em;
+  background: white;
+  border-radius: 15px;
+  margin: auto;
+}
+
+.card .share {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.card a {
+  color: white;
+  transition: .4s ease-in-out;
+}
+
+.card a:hover {
+  color: red;
+}
+
+.card button {
+  padding:5px;
+  display: block;
+  margin: 5px;
+  width: 40%;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  background:#00fdd3; 
+   
+  color: rgb(0, 0, 0);
+  transition: .4s ease-in-out;
+}
+
+.card button:hover {
+  cursor: pointer;
+}
+
+
+
+/* From Uiverse.io by JoseIsra */ 
+.projects-card {
+  width: 30.7rem;
+  cursor: pointer;
+  margin-top: 50px;
+  margin-bottom: 30px;
+ 
+}
+
+.content {
+    text-align: center;
+    position: relative;
+    transition: all 2.25s;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+                -15px -15px 30px rgb(60, 60, 60);
+    margin-left:10%;
+    padding: 5em;
+    transform-style: preserve-3d;
+    height: 100px;
+}
+
+.projects-card:hover .content {
+  transform: rotateY(0.5turn);
+}
+
+.front,
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 2em;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.title {
+  transform: translateZ(5rem);
+  font-size: 2rem;
+}
+
+.subtitle {
+  transform: translateZ(2rem);
+}
+
+.back {
+    transform: rotateY(0.5turn);
+    backface-visibility: hidden;
+    
+    /* This is the only thing you needed */
+    position: absolute;
+    inset: 0;
+    height: max-content;           /* grows automatically with content */
+    min-height: 100%;              /* still covers the card */
+    padding: 4rem 3rem;            /* big comfortable padding */
+    
+    display: flex;
+    flex-direction: column;
+    ;
+    justify-content: center;
+    gap: 2rem;
+    
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+                -15px -15px 30px rgb(60, 60, 60);
+}
+
+.description {
+  transform: translateZ(3rem);
+}
+
+.btnsforprojects{display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+ 
+}
+
+/* ADD this — this is the only real fix you need */
+.back {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.1s, visibility 0s linear 0.4s; /* delay visibility so it stays hidden during flip */
+}
+
+/* When the card is hovered (i.e. when front is rotated away), show the back */
+.projects-card:hover .back {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.6s 0.3s; /* fade in nicely after flip starts */
+}
+
+/* Optional: also keep front hidden after flip (cleaner look) */
+.front {
+    transition: opacity 0.1s 0.4s, visibility 0s 0.5s;
+}
+
+.projects-card:hover .front {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* 1. Hide all cards by default when ANY card is hovered */
+.projects-card:hover ~ .projects-card,
+.projects-card:hover {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;        /* prevents hovering multiple at once */
+    transition: opacity 0.4s, visibility 0.4s;
+}
+
+/* 2. But keep the currently hovered card visible and make it pop */
+.projects-card:hover {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    z-index: 1000;
+    transform: scale(1.08);      /* nice pop effect */
+    transition: transform 0.5s, opacity 0.4s, visibility 0s;
+}
+
+/* 3. Optional: make the hovered card bigger and add a subtle shadow */
+.projects-card:hover .content {
+    box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+}
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+

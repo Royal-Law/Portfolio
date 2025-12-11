@@ -1,0 +1,257 @@
+
+/* Media query for smaller mobile devices */
+@media only screen and (min-width: 360px) and (max-width: 775px) {
+    body {
+        padding: 0 2px;
+    }
+
+    .home-nav, .projects-nav, .contact-nav, .about-nav {
+        padding: 10px;
+    }
+
+
+    .nav-item {
+        padding: 5px;
+        font-size: sm;
+    }
+    
+    html{
+        background-color: #ffffff; /* Temporary white background */
+        background-size: cover;    
+    }
+
+    body::after {
+        background-color: #ffffff; /* Temporary white background */
+        background-size: cover;  
+        display: none;
+    }
+
+    
+    .socials-wrapper {
+        margin-left: -10px;
+        width: 95%;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        right: 10px;
+        padding: 10px;
+        background: linear-gradient(#212121, #212121) padding-box;
+        border: none;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        bottom: 18px;
+        right: 10px;
+        cursor: pointer;
+        size: 10px;
+    }
+
+    .form-container {
+        width: 100% + max-width;
+        margin-top: 20%;
+    }
+
+    
+
+    .form-container .form-group input, .form-container .form-group textarea  {
+        width: 90%;
+        padding: 12px 12px;
+        border-radius: 8px;
+        color: #fff;
+        font-family: inherit;
+        background-color: transparent;
+        border: 1px solid #414141;
+    }
+      
+    .form-container .form-group textarea {
+        height: 96px;
+        font-family: inherit;
+    }
+
+    #social-media-lable{
+        font-family: Arial, sans-serif;        
+        margin-top: 50px;
+        display: block;
+        margin-bottom: 1px;
+        color: white;
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+    #socials{
+        margin-top: 1px;
+        width: 94%;
+        
+    }
+
+    .social {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid rgb(194, 194, 194);
+        left: 10px;
+    }
+
+    .twitter:hover {
+        background: linear-gradient(45deg, #66757f, #00acee, #36daff, #dbedff);
+    }
+
+    .facebook:hover {
+        background: linear-gradient(45deg, #134ac0, #316ff6, #78a3ff);
+    }
+
+    .mail:hover {
+        background: linear-gradient(45deg, #872419, #db4a39, #ff7061);
+    }
+
+    .Whatsapp:hover {
+        background: #12a50b;
+    }
+       
+    .social svg {
+        fill: rgb(255, 255, 255);
+        height: 20px;
+    }
+
+    @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+      
+        50% {
+          background-position: 100% 50%;
+        }
+      
+        100% {
+          background-position: 0% 50%;
+        }
+    }
+
+    .Btn, .socials-wrapper{
+        position: fixed;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    .Btn{
+        bottom: 25px;
+        right: 20px;
+        bottom: 26px;
+    }
+
+    .terminal-loader {
+        width: 80%;
+        max-width: 400px;
+        height: 200px;
+        background: #1c1c1c;
+        border: 1px solid #ffffff3e;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-left: 8%;
+        margin-top: 50%;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        vertical-align: middle;
+    }
+
+    .form-container {
+        display: flex; /* Makes the container a flexbox */
+        flex-direction: column; /* Ensures elements inside are stacked vertically */
+        justify-content: center; /* Aligns the content vertically */
+        align-items: center; /* Aligns the form itself horizontally */
+        margin: 0 auto; /* Centers the container horizontally */
+        width: 90%; /* Ensures responsiveness */
+        max-width: 500px; /* Optional: limits the width for larger screens */
+        padding: 32px 24px; /* Add some padding for spacing */
+        box-sizing: border-box;
+     
+    }
+
+    .Contact-p{
+        color: #ffffff;
+        background-color: #000000;
+        border-radius: 10px;
+        width: 90%;
+        margin-left: 15px;
+    }
+
+    .card {
+        margin-left: 9%;
+        margin-top: 5%;
+        width: 85%;
+    }
+
+    .card .img { /*for the image in the card*/
+        background-image: url('../images/Image 2025-09-24 at 11.21 copy.jpg');
+        /*filter: blur(4px);*/
+        background-size: cover; /* or 'contain' depending on the effect you want */
+        background-position: center; /* Ensures the image is centered */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        border-radius: 100%;
+        margin: auto;
+        width: 7em; /* Ensure width is consistent */
+        height: 7.5em; /* Ensure height is consistent */
+    }
+
+    .link{ /*thisis for the work with me link on the about tab*/
+        padding: 8.6px;
+        border-radius: 10px;
+        width: 48%; 
+        margin-left: 80px;
+    }
+
+    .btn-container{
+        margin-top: 2%;
+    }
+
+    
+
+
+ 
+
+ #big-screens {
+    visibility: hidden;  /* Element becomes invisible but still takes up space */
+}
+    
+    
+}
+
+/* javascript to not show the Website Contents on devices less or equals to Apple Watch*/
+@media only screen and (min-width:200px) and (max-width:  350px) {
+    .notsupported{
+        padding: 40px;
+        
+    }
+
+   
+}
+
+.notsupported{
+    color: rgb(255, 255, 255);  
+}
+
+.screen{
+    color: rgb(255, 255, 255);
+
+}
+
+/* javascript to not show the Website Contents on devices less or equals to iphone se*/
+
+@media only screen and (max-width:  199px) {
+    .notsupported{
+        color: rgb(255, 255, 255);
+        padding: 10px;
+        
+    }
+
+    .screen{
+        color: rgb(255, 255, 255);
+        font-family: monospace;
+
+    }
+}

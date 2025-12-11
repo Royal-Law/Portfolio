@@ -1,0 +1,533 @@
+/* Media query for PC devices */
+@media only screen and (min-width:1000px) and (max-width:  2560px) {
+
+    #mail{
+        margin-left: 95px;
+    }
+    .socials-wrapper {
+        display: none;
+        margin-left: -10px;
+        width: 95%;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        padding: 10px;
+        background: linear-gradient(#212121, #212121) padding-box;
+        border: none;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        bottom: 18px;
+        right: 80px;
+        cursor: pointer;
+        size: 10px;
+    }
+
+    .social {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid rgb(194, 194, 194);
+        left: 10px;
+    }
+
+    .twitter:hover {
+        background: linear-gradient(45deg, #66757f, #00acee, #36daff, #dbedff);
+    }
+
+    .facebook:hover {
+        background: linear-gradient(45deg, #134ac0, #316ff6, #78a3ff);
+    }
+
+    .mail:hover {
+        background: linear-gradient(45deg, #872419, #db4a39, #ff7061);
+    }
+
+    .Whatsapp:hover {
+        background: #12a50b;
+    }
+       
+    .social svg {
+        height: 20px;
+    }
+
+    @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+      
+        50% {
+          background-position: 100% 50%;
+        }
+      
+        100% {
+          background-position: 0% 50%;
+        }
+    }
+
+    .Btn, .socials-wrapper{
+        position: fixed;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        overflow: hidden;
+        
+
+    }
+
+    .Btn{
+        bottom: 25px;
+        right: 100px;
+    }
+
+
+    #socials{
+        margin-top: 35px;
+        width: 94%;
+
+    }
+
+     .Btn, .socials-wrapper{
+        position: fixed;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        overflow: hidden;
+        
+
+    }
+}
+
+
+/* Macbook air 13"*/
+@media only screen and (min-width:1000px) and (max-width:  1280px) {
+    .socials-wrapper {
+        margin-left: -10px;
+        width: 95%;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        padding: 10px;
+        background: linear-gradient(#212121, #212121) padding-box;
+        border: none;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        bottom: 18px;
+        right: 80px;
+        cursor: pointer;
+        size: 10px;
+    }
+
+    .social {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid rgb(194, 194, 194);
+        left: 10px;
+    }
+
+    .twitter:hover {
+        background: linear-gradient(45deg, #66757f, #00acee, #36daff, #dbedff);
+    }
+
+    .facebook:hover {
+        background: linear-gradient(45deg, #134ac0, #316ff6, #78a3ff);
+    }
+
+    .mail:hover {
+        background: linear-gradient(45deg, #872419, #db4a39, #ff7061);
+    }
+
+    .Whatsapp:hover {
+        background: #12a50b;
+    }
+       
+    .social svg {
+        height: 20px;
+    }
+
+    @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+      
+        50% {
+          background-position: 100% 50%;
+        }
+      
+        100% {
+          background-position: 0% 50%;
+        }
+    }
+
+
+    #socials{
+        margin-top: 35px;
+        width: 94%;
+
+    }
+}
+
+
+/* Media query for smaller mobile devices */
+@media only screen and (min-width: 360px) and (max-width: 480px) {
+    .screenM {
+    display: none;
+    
+    }
+    .screen {
+        display: flex;
+    }
+
+    .socials-wrapper {
+        margin-left: -10px;
+        width: 95%;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        right: 10px;
+        padding: 10px;
+        background: linear-gradient(#212121, #212121) padding-box;
+        border: none;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        bottom: 18px;
+        right: 10px;
+        cursor: pointer;
+        size: 10px;
+    }
+
+    .form-container {
+        width: 355px;
+        margin-top: 20%;
+        margin-left: 4%;
+    }
+
+    .form-container .form-group input, .form-container .form-group textarea  {
+        width: 285px;
+        padding: 12px 16px;
+        border-radius: 8px;
+        color: #fff;
+        font-family: inherit;
+        background-color: transparent;
+        border: 1px solid #414141;
+    }
+      
+    .form-container .form-group textarea {
+        height: 96px;
+        font-family: inherit;
+    }
+
+    #social-media-lable{
+        font-family: Arial, sans-serif;        
+        margin-top: 50px;
+        display: block;
+        margin-bottom: 1px;
+        color: white;
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+    #socials{
+        margin-top: 1px;
+        width: 94%;
+        
+    }
+
+    .social {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid rgb(194, 194, 194);
+        left: 10px;
+    }
+
+    .twitter:hover {
+        background: linear-gradient(45deg, #66757f, #00acee, #36daff, #dbedff);
+    }
+
+    .facebook:hover {
+        background: linear-gradient(45deg, #134ac0, #316ff6, #78a3ff);
+    }
+
+    .mail:hover {
+        background: linear-gradient(45deg, #872419, #db4a39, #ff7061);
+    }
+
+    .Whatsapp:hover {
+        background: #12a50b;
+    }
+       
+    .social svg {
+        height: 20px;
+    }
+
+    @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+      
+        50% {
+          background-position: 100% 50%;
+        }
+      
+        100% {
+          background-position: 0% 50%;
+        }
+    }
+
+    .Btn, .socials-wrapper{
+        position: fixed;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    .Btn{
+        bottom: 25px;
+        right: 20px;
+        bottom: 26px;
+    }
+
+    #maintenence{
+        font-size: xx-small;
+    }
+}
+
+
+/* Media query for tablet devices */
+@media only screen and (min-width: 700px) and (max-width: 1024px) {
+
+   .socials-wrapper {
+        margin-left: -10px;
+        width: 95%;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        right: 10px;
+        padding: 10px;
+        background: linear-gradient(#212121, #212121) padding-box;
+        border: none;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        bottom: 18px;
+        right: 10px;
+        cursor: pointer;
+        size: 10px;
+    }
+
+    
+    
+
+    .social {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid rgb(194, 194, 194);
+        left: 10px;
+    }
+
+    .twitter:hover {
+        background: linear-gradient(45deg, #66757f, #00acee, #36daff, #dbedff);
+    }
+
+    .facebook:hover {
+        background: linear-gradient(45deg, #134ac0, #316ff6, #78a3ff);
+    }
+
+    .mail:hover {
+        background: linear-gradient(45deg, #872419, #db4a39, #ff7061);
+    }
+
+    .Whatsapp:hover {
+        background: #12a50b;
+    }
+       
+    .social svg {
+        height: 20px;
+    }
+
+    @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+      
+        50% {
+          background-position: 100% 50%;
+        }
+      
+        100% {
+          background-position: 0% 50%;
+        }
+    }
+
+    .Btn, .socials-wrapper{
+        position: fixed;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        overflow: hidden;
+
+    }
+    
+}
+
+/* javascript to not show the Website Contents on devices less or equals to iphone se*/
+
+@media only screen and (max-width:  199px) {
+    .notsupported{
+        color: rgb(255, 255, 255);
+        padding: 10px;
+        
+    }
+
+    .screen{
+        color: rgb(255, 255, 255);
+        font-family: monospace;
+
+    }
+}
+
+
+#maintenence {
+    font-family: monospace;
+    position: fixed;
+    bottom: 3px; /* Small offset from bottom for better appearance */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%; /* Ensure it spans the viewport for centering */
+    margin: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+/* Ensure body has no margin to prevent gaps */
+body {
+    margin: 0;
+}
+
+
+#gear {
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Modal styles */
+#maintenence {
+    font-family: monospace;
+    position: fixed;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    z-index: 1000;
+}
+
+body {
+    margin: 0;
+}
+
+#gear {
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.terminal-loader-info {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+}
+
+.modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 9998; 
+}
+
+button {
+    background-color: #ffffff;
+    color: #212121;
+    fill: #212121;
+}
+
+#gear:hover {
+    color: #ffffff;
+    fill: #ffffff;
+}
+
+button:hover {
+    background-color: #212121;
+    color: #ffffff;
+    fill: #ffffff;
+}
+
+button{
+
+ background-color: #ffffff;
+ color: #212121;
+ fill: #212121;
+}
+
+#gear:hover{
+ color: #ffffff;
+ fill: #ffffff;
+
+}
+
+button:hover{
+
+ background-color: #212121;
+ color: #ffffff;
+ fill: #ffffff;
+}

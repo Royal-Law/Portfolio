@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate Token</title>
+  <style>
+    body { font-family: system-ui; background: #000; color: #0f0; padding: 2rem; text-align: center; }
+    input, button { margin: 1rem; padding: 0.8rem; width: 280px; }
+    #result { color: #ff0; background: #111; padding: 1rem; border-radius: 8px; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Generate Access Token</h1>
+  <input type="password" id="key" placeholder="Admin Key">
+  <button onclick="gen()">Generate</button>
+  <pre id="result"></pre>
+
+  <script>
+    async function gen() {
+      const key = document.getElementById('key').value;
+      const res = await fetch('/api/create-token', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ adminKey: key })
+      });
+      const data = await res.json();
+      document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
